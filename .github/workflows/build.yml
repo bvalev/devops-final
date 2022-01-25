@@ -163,7 +163,7 @@ jobs:
         with:
           severity-threshold: CRITICAL
           image-name: |
-            docker.io/${{ secrets.DOCKERHUB_USERNAME }}/${{ env.CLIENT_DOCKER_IMAGE }}:${{ env.SHORT_SHA }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.CLIENT_DOCKER_IMAGE }}
       - name: Scan server for vulnerabilities
         uses: azure/container-scan@v0
         with:
