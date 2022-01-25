@@ -1,0 +1,31 @@
+#idea-generated
+.idea
+*.iml
+
+# dependencies
+/node_modules
+
+# production
+/build
+/target
+/dist
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+*.log*
+
+#eclipse-generated
+.settings/
+.classpath
+.project
+
+
+#coverage-related
+.nyc_output
+coverage/
+test-report.xml

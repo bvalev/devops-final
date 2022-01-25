@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jukebox
+  annotations:
+    notifications.argoproj.io/subscribe.on-sync-succeeded.gmail: argocdtest68a90dd@gmail.com
+spec:
+  destination:
+    namespace: jukebox
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: .
+    repoURL: 'https://github.com/bvalev/devops-final'
+    targetRevision: main
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
